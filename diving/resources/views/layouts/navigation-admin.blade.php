@@ -15,7 +15,12 @@
                     <x-nav-link :href="route('admin.dashboard')" :active="request()->routeIs('admin.dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('admin.customers.index')" :active="request()->routeIs('admin.customers.*')">
+                    @if (request()->routeIs('admin.customers.*') || request()->routeIs('admin.customerSearch.*'))
+                        <?php $active = true; ?>
+                    @else
+                        <?php $active = false; ?>
+                    @endif
+                    <x-nav-link :href="route('admin.customers.index')" :active="$active">
                         顧客
                     </x-nav-link>
                     <x-nav-link :href="route('admin.customers.index')" :active="request()->routeIs('admin.customers.*')">

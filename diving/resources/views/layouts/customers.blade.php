@@ -11,10 +11,15 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 
         <!-- Styles -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="  crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
         <link rel="stylesheet" href="{{ asset('css/app.css') }}?<?= date('YmdHis'); ?>">
+        <link rel="stylesheet" href="{{ asset('css/common.css') }}?<?= date('YmdHis'); ?>">
+        <link rel="stylesheet" href="{{ asset('css/customers.css') }}?<?= date('YmdHis'); ?>">
 
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
+        <script src="{{ asset('js/customers.js') }}?<?= date('YmdHis'); ?>" defer></script>
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">

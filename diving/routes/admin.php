@@ -8,7 +8,7 @@ use App\Http\Controllers\Admin\Auth\NewPasswordController;
 use App\Http\Controllers\Admin\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Admin\Auth\RegisteredUserController;
 use App\Http\Controllers\Admin\Auth\VerifyEmailController;
-use App\Http\Controllers\Admin\CustomerController;
+use App\Http\Controllers\Admin\{CustomerController, CustomerSearchController};
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,6 +32,10 @@ Route::get('/dashboard', function () {
 
 Route::resource('customers', CustomerController::class)
     ->middleware('auth:admin');
+Route::middleware('auth:admin')->group(function(){
+    Route::get('/customerSearch', [CustomerSearchController::class, 'index'])->name('customerSearch.index');
+    Route::post('/customerSearch/searching', [CustomerSearchController::class, 'searching'])->name('customerSearch.searching');
+});
 
 
 Route::middleware('guest')->group(function () {

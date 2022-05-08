@@ -23,7 +23,7 @@ class CreateCustomerInfosTable extends Migration
             $table->string('pref21')           ->nullable()->comment('都道府県');
             $table->string('addr21')           ->nullable()->comment('市区町村');
             $table->string('street21')         ->nullable()->comment('所在');
-            $table->tinyInteger('esx')->unsigned()->nullable()->comment('性別');
+            $table->tinyInteger('sex')->unsigned()->nullable()->comment('性別');
 
 
             $table->timestamp('created_at')    ->default(DB::raw('CURRENT_TIMESTAMP'))->comment('作成日時')	;
