@@ -339,6 +339,9 @@
     "Log In": "ログイン",
     "Log Out": "ログアウト",
     "Log Out Other Browser Sessions": "すべての端末からログアウト",
+    "Log Management": "ログ管理",
+    "Log Register": "ログ登録",
+    "Log List": "ログ一覧",
     "Login": "ログイン",
     "Logout": "ログアウト",
     "Luxembourg": "ルクセンブルク",
@@ -519,6 +522,7 @@
     "Saudi Arabia": "サウジアラビア",
     "Save": "更新",
     "Saved.": "更新完了",
+    "Schedule Management": "スケジュール管理",
     "Search": "検索",
     "Select": "選択",
     "Select a different plan": "別のプランを選択",
@@ -753,6 +757,28 @@
     "First Name": "苗字",
     "Last Name": "名前",
     "First Name Read": "ミョウジ",
-    "Last Name Read": "ナマエ"
+    "Last Name Read": "ナマエ",
+    "Dive Date": "潜水日",
+    "boat": "ボート",
+    "beach": "ビーチ",
+    "sunny": "晴れ",
+    "cloudy": "曇り",
+    "rain": "雨",
+    "sunny-cloudy": "晴/曇",
+    "cloud-rain": "曇/雨",
+    "moon": "月",
+    "moon-cloud": "月/曇",
+    "none": "なし",
+    "somewhat": "ややあり",
+    "hard": "激しい",
+    "flow_none": "なし",
+    "flow_somewhat": "ややあり",
+    "flow_strong": "強い",
+    "wind_none": "無風",
+    "wind_somewhat": "ややあり",
+    "wind_strong": "強風",
+
+
+    "Test": "テスト"
 
 }

@@ -139,5 +139,9 @@ return [
         'password'         => 'パスワード',
         'f_name'           => '苗字',
         'l_name'           => '名前',
+        'log_date'         => '潜水日',
+        'entry_time'       => '潜水開始時間',
+        'exit_time'         => '潜水終了時間',
+        'swim_time'        => '潜水時間',
     ],
 ];

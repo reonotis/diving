@@ -3,8 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Models\{Customer, CustomerInfo};
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class CustomerSearchController extends Controller
 {
@@ -51,5 +52,31 @@ class CustomerSearchController extends Controller
     {
         //
     }
+
+    /**
+     *
+     */
+    public function getCustomers(Request $request)
+    {
+
+        Log::info("CustomerSearchController:getCustomers requestDate name:" . $request->name );
+
+        $customersQuery = Customer::where('f_name', 'like', '%' . $request->name . '%');
+
+
+        if(!empty($request->whereNotInList)){
+            $customersQuery = $customersQuery->whereNotIn('id',  $request->whereNotInList );
+        }
+
+        if($request->limit){
+            $customersQuery = $customersQuery->limit($request->limit);
+        }
+        $customers = $customersQuery->get();
+        Log::info("CustomerSearchController:getCustomers responseDate " . $customers );
+        return $customers;
+    }
+
+
+
 
 }

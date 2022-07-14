@@ -14,20 +14,7 @@ class LogSeeder extends Seeder
      */
     public function run()
     {
-        $insertData = array();
-
-        for($i = 1 ; $i<100 ; $i++ ){
-            $insertData[] = [
-
-                'instructor_id' => '1',
-                'customer_id' => '2',
-                'date' => date('Y-m-d'),
-                'entry_time' => date('H:i'),
-                'exit_time' => date('H:i'),
-            ];
-        }
-
-        DB::table('logs')->insert($insertData);
+        \App\Models\Log::factory()->count(100)->create();
     }
 }
 

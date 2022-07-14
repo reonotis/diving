@@ -20,6 +20,8 @@ class LogFactory extends Factory
             'date' => date('Y-m-d'),
             'entry_time' => date('H:i'),
             'exit_time' => date('H:i'),
+            'swim_time' => '00:40',
+            'entry' => rand(1, 2),
         ];
     }
 }

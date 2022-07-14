@@ -17,6 +17,8 @@ class CreateLogTransactionsTable extends Migration
             $table->id();
             $table->timestamps();
         });
+
+        DB::statement("ALTER TABLE log_transactions COMMENT 'ログ トランザクション'");
     }
 
     /**

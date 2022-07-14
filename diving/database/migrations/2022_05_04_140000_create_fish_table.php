@@ -22,6 +22,8 @@ class CreateFishTable extends Migration
             $table->timestamp('updated_at')    ->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'))->comment('更新日時');
             $table->boolean('delete_flag')     ->default('0')->comment('削除フラグ');
         });
+
+        DB::statement("ALTER TABLE fish COMMENT '魚種リスト'");
     }
 
     /**

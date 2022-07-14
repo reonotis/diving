@@ -23,8 +23,11 @@
                     <x-nav-link :href="route('admin.customers.index')" :active="$active">
                         顧客
                     </x-nav-link>
-                    <x-nav-link :href="route('admin.customers.index')" :active="request()->routeIs('admin.customers.*')">
-                        予約
+                    <x-nav-link :href="route('admin.log.index')" :active="request()->routeIs('admin.log.*')">
+                        ログ
+                    </x-nav-link>
+                    <x-nav-link :href="route('admin.schedule.index')" :active="request()->routeIs('admin.schedule*')">
+                        スケジュール
                     </x-nav-link>
                     <x-nav-link :href="route('admin.customers.index')" :active="request()->routeIs('admin.customers.*')">
                         売り上げ

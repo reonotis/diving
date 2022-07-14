@@ -1,0 +1,193 @@
+:root{
+  --calendar-one-day-width: 140px;
+
+}
+
+
+
+
+.calendar-contents{
+  width: calc( ( var(--calendar-one-day-width) + 4px) * 7);
+  margin: 0 auto;
+}
+.calendar-width{
+  width: 100%;
+}
+.calendar-week{
+  background: #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 30px;
+}
+.calendar-one-day{
+  width: var(--calendar-one-day-width);
+  margin: 2px;
+  padding: 0 0.1rem;
+}
+.calendar-one-day-content{
+  position: relative;
+  border: solid 1px #333;
+}
+.calendar-week-sunday{
+  background: var(--red-200);
+  color: var(--red-700);
+  border: solid 1px var(--red-700);
+}
+.calendar-week-saturday{
+  background: var(--blue-200);
+  color: var(--blue-700);
+  border: solid 1px var(--blue-700);
+}
+.day-content{
+  min-height: 100px;
+  cursor: pointer;
+  transition: var(--transition-hover);
+}
+.day-content.today{
+  border: solid 3px var(--blue-400);
+}
+.day-content:hover{
+  background: var(--blue-200);
+}
+
+
+/*  */
+.schedule-create-form-area{
+  position: fixed;
+
+}
+.schedule-create-form-mask{
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  background: #111a;
+}
+.schedule-create-form{
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  padding: 20px;
+  border-radius: 1rem;
+  margin: 100px auto;
+  background: #fff;
+}
+.schedule-create-label{
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.schedule-create-content{
+  width: calc(100% - 100px);
+}
+
+.calendar-schedule{
+  width: 100%;
+  margin: 0 0 2px;
+  padding: 0 0.4rem 0 0.2rem;
+  font-size: 0.8em;
+  color: #fff;
+  background: var(--blue-600);
+  border-radius: 0.25rem;
+  transition: var(--transition-hover);
+}
+.calendar-schedule:hover{
+  padding: 0 0.2rem 0 0.4rem;
+}
+
+
+
+.schedule-detail-mask{
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #111a;
+  z-index: 100;
+}
+.schedule-detail{
+  position: relative;
+  width: 80%;
+  margin: 100px auto;
+  background: #fff;
+}
+.schedule-detail.loading::after{
+  position: absolute;
+  content: "";
+  width: 70px;
+  height: 70px;
+  top: 100px;
+  left: 50%;
+  box-sizing: border-box;
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  border: 10px solid var(--blue-100);
+  border-top-color: var(--blue-600);
+  animation: spin 0.8s infinite linear;
+}
+
+@keyframes spin {
+  0%{transform:rotateZ(0deg);}
+  100%{transform:rotateZ(360deg);}
+}
+
+
+.schedule-detail-contents{
+  border: solid 1px #ccc;
+}
+.schedule-detail-title{
+  padding: 1rem 0.5rem;
+  width: 150px;
+}
+.schedule-detail-content{
+  padding: 1rem 0.5rem;
+  width: calc(100% - 150px);
+}
+
+.selectionCustomer{
+  position: relative;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  border: solid 1px #333;
+  border-radius: 0.25rem;
+  pointer-events: none;
+  transition: var(--transition-hover);
+}
+.selectionCustomer:hover{
+  background: var(--blue-600);
+  color: white;
+}
+.selectionCustomerAppend{
+  margin-left: 10px;
+  cursor: pointer;
+  pointer-events: auto;
+}
+.selectedCustomer{
+  position: relative;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  background: var(--blue-200);
+  color: var(--blue-700);
+  border: solid 1px var(--blue-600);
+  border-radius: 0.25rem;
+  pointer-events: none;
+  transition: var(--transition-hover);
+}
+.selectedCustomer:hover{
+  background: var(--red-600);
+  border: solid 1px var(--red-600);
+  color: white;
+}
+.selectionCustomerRemove{
+  margin-left: 10px;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+

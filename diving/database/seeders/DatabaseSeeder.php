@@ -20,8 +20,8 @@ class DatabaseSeeder extends Seeder
             AdminSeeder::class,
             LicensesSeeder::class,
             CustomerLicensesSeeder::class,
-            // LogSeeder::class,
+            LogSeeder::class,
+            CourseSeeder::class,
         ]);
-        \App\Models\Log::factory()->count(300)->create();
     }
 }

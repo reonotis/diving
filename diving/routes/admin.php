@@ -6,9 +6,9 @@ use App\Http\Controllers\Admin\Auth\EmailVerificationNotificationController;
 use App\Http\Controllers\Admin\Auth\EmailVerificationPromptController;
 use App\Http\Controllers\Admin\Auth\NewPasswordController;
 use App\Http\Controllers\Admin\Auth\PasswordResetLinkController;
-use App\Http\Controllers\Admin\Auth\RegisteredUserController;
+// use App\Http\Controllers\Admin\Auth\RegisteredUserController;
 use App\Http\Controllers\Admin\Auth\VerifyEmailController;
-use App\Http\Controllers\Admin\{CustomerController, CustomerSearchController};
+use App\Http\Controllers\Admin\{CustomerController, CustomerSearchController, LogController, ScheduleController};
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,14 +35,31 @@ Route::resource('customers', CustomerController::class)
 Route::middleware('auth:admin')->group(function(){
     Route::get('/customerSearch', [CustomerSearchController::class, 'index'])->name('customerSearch.index');
     Route::post('/customerSearch/searching', [CustomerSearchController::class, 'searching'])->name('customerSearch.searching');
+    Route::post('/customerSearch/getCustomers', [CustomerSearchController::class, 'getCustomers'])->name('customerSearch.getCustomers');
+});
+
+Route::resource('schedule', ScheduleController::class)
+    ->middleware('auth:admin');
+Route::middleware('auth:admin')->group(function(){
+    Route::get('/schedule/getScheduleById/{scheduleId}', [ScheduleController::class, 'getScheduleById'])->name('schedule.getSchedule');
+});
+
+Route::middleware('auth:admin')->group(function(){
+    Route::get('/scheduleMonth/{month}', [ScheduleController::class, 'scheduleMonth'])->name('scheduleMonth');
 });
 
 
-Route::middleware('guest')->group(function () {
-    Route::get('register', [RegisteredUserController::class, 'create'])
-                ->name('register');
 
-    Route::post('register', [RegisteredUserController::class, 'store']);
+Route::get('log/list', [LogController::class, 'list'])->name('log.list')->middleware('auth:admin');
+Route::resource('log', LogController::class)
+    ->middleware('auth:admin');
+
+
+Route::middleware('guest')->group(function () {
+    // Route::get('register', [RegisteredUserController::class, 'create'])
+    //             ->name('register');
+
+    // Route::post('register', [RegisteredUserController::class, 'store']);
 
     Route::get('login', [AuthenticatedSessionController::class, 'create'])
                 ->name('login');
@@ -82,4 +99,3 @@ Route::middleware('auth:admin')->group(function () {
     Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])
                 ->name('logout');
 });
-// TODO https://www.udemy.com/course/laravel-multi-ec/learn/lecture/26255676#overview

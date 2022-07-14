@@ -16,7 +16,7 @@
                     <!-- Validation Errors -->
                     <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
-                    <form action="{{ route('admin.customers.store') }}" method="POST" >
+                    <form action="{{ route('admin.customers.store'); }}" method="POST" >
                         @csrf
                         <section class="text-gray-600 body-font relative">
                             <div class="container px-5 py-24 mx-auto">
@@ -53,7 +53,7 @@
                                             </div>
                                         </div>
                                         <div class="p-2 w-full mt-4 flex justify-around">
-                                            <button onclick="location.href='{{ route('admin.customers.index') }}'" type="button" class="bg-gray-200 border-0 py-2 px-8 focus:outline-none hover:bg-gray-400 rounded text-lg">戻る</button>
+                                            <button onclick="location.href='{{ route('admin.customers.index'); }}'" type="button" class="bg-gray-200 border-0 py-2 px-8 focus:outline-none hover:bg-gray-400 rounded text-lg">戻る</button>
                                             <button type="submit" class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">登録</button>
                                         </div>
                                     </div>
